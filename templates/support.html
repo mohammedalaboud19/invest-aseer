@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4">الدعم</h2>
+  <ul class="nav nav-tabs" id="supportTabs" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link {% if not submitted %}active{% endif %}" id="submit-tab" data-bs-toggle="tab" data-bs-target="#submit" type="button">رفع الطلب</button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link {% if submitted %}active{% endif %}" id="track-tab" data-bs-toggle="tab" data-bs-target="#track" type="button">متابعة الطلب</button>
+    </li>
+  </ul>
+  <div class="tab-content border border-top-0 p-4 bg-white">
+    <div class="tab-pane fade {% if not submitted %}show active{% endif %}" id="submit">
+      <form method="post">
+        <div class="mb-3">
+          <label>نوع الدعم المطلوب:</label>
+          <input type="text" class="form-control" name="support_type" required>
+        </div>
+        <div class="mb-3">
+          <label>تفاصيل الطلب:</label>
+          <textarea class="form-control" name="details" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">رفع الطلب</button>
+      </form>
+    </div>
+    <div class="tab-pane fade {% if submitted %}show active{% endif %}" id="track">
+      <h5>مراحل المعالجة:</h5>
+      <ul class="list-group">
+        <li class="list-group-item">✓ تم رفع الطلب</li>
+        <li class="list-group-item">✓ تحت المعالجة</li>
+        <li class="list-group-item">✓ تم الرد</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

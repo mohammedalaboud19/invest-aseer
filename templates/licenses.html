@@ -1,0 +1,65 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4">طلب التراخيص</h2>
+
+  <div class="row">
+    {% set entities = [
+      {"name": "إمارة منطقة عسير", "logo": "emarate_aseer.jpeg", "options": ["تصريح فعالية", "ترخيص أمني"]},
+      {"name": "أمانة منطقة عسير", "logo": "amanat_aseer.jpeg", "options": ["ترخيص بناء", "ترخيص محل تجاري"]},
+      {"name": "وزارة الاستثمار", "logo": "investment_ministry.png", "options": ["ترخيص استثماري", "تصريح شركة أجنبية"]},
+      {"name": "شركة الكهرباء", "logo": "electricity_company.png", "options": ["طلب عداد كهرباء", "تصريح توصيل شبكة"]}
+    ] %}
+
+    {% for entity in entities %}
+      <div class="col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header text-center bg-light">
+            <img src="{{ url_for('static', filename='img/' + entity.logo) }}" alt="شعار" class="mb-2" style="height: 60px;">
+            <h5 class="mb-0">{{ entity.name }}</h5>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              <div class="mb-3">
+                <label>اختر نوع الترخيص:</label>
+                <select class="form-select" name="license_type" required>
+                  {% for option in entity.options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="mb-3">
+                <label>تفاصيل إضافية:</label>
+                <textarea class="form-control" name="details" rows="2" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">تقديم الطلب</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <hr class="my-5">
+
+  <!-- متابعة الطلب -->
+  <div class="text-center">
+    <a class="btn btn-outline-dark" data-bs-toggle="collapse" href="#trackSection" role="button" aria-expanded="false" aria-controls="trackSection">
+      متابعة الطلب
+    </a>
+  </div>
+  <div class="collapse mt-4" id="trackSection">
+    <div class="card card-body bg-white border shadow-sm">
+      <h5 class="mb-3">مراحل الطلب:</h5>
+      <ul class="list-group">
+        <li class="list-group-item">✓ تم استلام الطلب</li>
+        <li class="list-group-item">✓ تحت المعالجة لدى الجهة المختصة</li>
+        <li class="list-group-item">✓ تمت الموافقة المبدئية</li>
+        <li class="list-group-item">✓ تم إصدار الترخيص</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

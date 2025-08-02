@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5" style="max-width: 600px;">
+  <h2 class="text-center mb-4">معلومات العقار</h2>
+  <form>
+    <div class="mb-3">
+      <label class="form-label">موقع العقار</label>
+      <input type="text" class="form-control" placeholder="أدخل موقع العقار">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">ماهو العقار</label>
+      <input type="text" class="form-control" placeholder="أدخل نوع العقار">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">المبلغ المطلوب</label>
+      <input type="text" class="form-control" placeholder="أدخل المبلغ المطلوب">
+    </div>
+  </form>
+<hr class="my-5">
+<h4 class="text-center mb-4">فرص استثمارية مقترحة</h4>
+<div class="row justify-content-center">
+  <div class="col-md-5 mb-3">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="شعار استثمر عسير" style="max-width: 100px;" class="mb-2">
+        <h5 class="card-title">أرض تجارية في أبها</h5>
+        <p class="card-text">المساحة: ١٥٠٠م² - على شارع رئيسي</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5 mb-3">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="شعار استثمر عسير" style="max-width: 100px;" class="mb-2">
+        <h5 class="card-title">مبنى إداري جاهز</h5>
+        <p class="card-text">مناسب للاستثمار الفوري في وسط المدينة</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+{% endblock %}

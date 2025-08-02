@@ -1,0 +1,74 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+<div class="text-center mb-5">
+<h1 class="display-5 fw-bold">مرحباً بكم في منصة استثمر عسير</h1>
+<p class="lead">وجهتك الأولى لاكتشاف الفرص الاستثمارية في منطقة عسير.</p>
+
+{% if name %}
+  <h4 class="text-end text-success">مرحبًا {{ name.split(' ')[0] }}</h4>
+{% endif %}
+
+  </div>
+<!-- أقسام رئيسية -->
+<div class="row text-center mb-5">
+<div class="col-md-4 mb-4">
+<div class="card h-100 shadow-sm border-start border-4 border-success">
+<div class="card-body">
+<h5 class="card-title">الفرص الاستثمارية</h5>
+<p class="card-text">تصفح الفرص المتنوعة حسب الفئة والموقع.</p>
+<a class="btn btn-outline-success" href="/opportunities">عرض الفرص</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4">
+<div class="card h-100 shadow-sm border-start border-4 border-primary">
+<div class="card-body">
+<h5 class="card-title">التراخيص</h5>
+<p class="card-text">قدّم طلبات التراخيص عبر الجهات المختصة.</p>
+<a class="btn btn-outline-primary" href="/licenses">ابدأ الآن</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-4">
+<div class="card h-100 shadow-sm border-start border-4 border-warning">
+<div class="card-body">
+<h5 class="card-title">دراسة الجدوى</h5>
+<p class="card-text">احصل على دعم لدراسة جدوى مشروعك.</p>
+<a class="btn btn-outline-warning" href="/feasibility">ارفع طلبك</a>
+</div>
+</div>
+</div>
+</div>
+<!-- فرص مميزة -->
+<h3 class="text-center mb-4">فرص مميزة</h3>
+<div class="row">
+    {% for opp in opportunities %}
+      <div class="col-md-4 mb-4">
+<div class="card h-100 shadow-sm">
+<img alt="شعار الفرصة" class="card-img-top p-4" src="{{ url_for('static', filename='img/logo.png') }}"/>
+<div class="card-body">
+<h5 class="card-title">{{ opp.name }}</h5>
+<p class="card-text">المساحة: {{ opp.area }} م²</p>
+<p class="card-text">القرب من الشارع: {{ opp.street_distance }} متر</p>
+<span class="badge bg-info text-dark">{{ opp.category }}</span>
+</div>
+</div>
+</div>
+    {% endfor %}
+  </div>
+<div class="card shadow-sm">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">أرض تجارية في أبها</h5>
+<p class="card-text">المساحة: ١٥٠٠م² - على شارع رئيسي</p>
+</div>
+</div><div class="card shadow-sm">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">مبنى إداري جاهز</h5>
+<p class="card-text">مناسب للاستثمار الفوري في وسط المدينة</p>
+</div>
+</div></div>
+{% endblock %}

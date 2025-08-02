@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>استثمر عسير</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="/">استثمر عسير</a>
+    {% if session.get('role') == 'investor' %}
+    <span class="ms-3">مرحبًا {{ session.get('name').split(' ')[0] }}</span>
+    {% endif %}
+      <div class="navbar-nav">
+        <a class="nav-link" href="/opportunities">الفرص</a>
+        <a class="nav-link" href="/licenses">التراخيص</a>
+        <a class="nav-link" href="/feasibility">دراسة الجدوى</a>
+        <a class="nav-link" href="/support">الدعم</a>
+        <a class="nav-link" href="mailto:invest@aseer.gov.sa">التواصل عبر البريد</a>
+      </div>
+    </div>
+  </nav>
+  {% block content %}{% endblock %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    if (window.location.href.includes("submitted=true")) {
+      let tabBtn = document.querySelector('button.nav-link.active');
+      if (tabBtn && tabBtn.dataset.bsTarget) {
+        let nextTab = document.querySelector(tabBtn.dataset.bsTarget);
+        if (nextTab) {
+          let trigger = new bootstrap.Tab(tabBtn);
+          trigger.show();
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

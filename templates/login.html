@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center py-5">
+  <h1 class="mb-4">مرحبًا بكم في منصة استثمر عسير</h1>
+  <img src="{{ url_for('static', filename='img/logo.png') }}" alt="شعار المنصة" style="max-width: 150px;" class="mb-4">
+  <button class="btn btn-primary" onclick="document.getElementById('loginForm').style.display='block'">تسجيل الدخول</button>
+
+  <form id="loginForm" method="POST" action="/login" class="mt-4" style="display:none; max-width: 400px; margin: auto;">
+    <div class="mb-3">
+      <label for="role" class="form-label">تسجيل الدخول كـ</label>
+      <select class="form-select" name="role" id="role" required>
+        <option value="investor">مستثمر</option>
+        <option value="owner">تاجر</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <input name="name" type="text" class="form-control" placeholder="الاسم" required>
+    </div>
+    <div class="mb-3">
+      <input name="phone" type="text" class="form-control" placeholder="رقم الجوال" required>
+    </div>
+    <button type="submit" class="btn btn-success">تسجيل الدخول</button>
+  </form>
+</div>
+{% endblock %}

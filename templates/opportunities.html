@@ -1,0 +1,147 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="container my-5">
+<h2 class="text-center mb-4">الفرص الاستثمارية</h2>
+<!-- تصنيفات الفرص -->
+<div class="d-flex flex-wrap justify-content-center mb-4">
+    {% for category in ['عقارات', 'سياحة', 'تجارة', 'زراعة', 'خدمات'] %}
+      <button class="btn btn-outline-primary m-2 filter-btn" data-category="{{ category }}">{{ category }}</button>
+    {% endfor %}
+  </div>
+<div class="card opportunity-card m-2" data-category="مباني الاستدامه">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">تطوير مبنى مستدام</h5>
+<p class="card-text">المساحة: ١٢٠٠م²</p>
+<p class="card-text">المميزات: موقع مميز - قريب من الخدمات</p>
+</div>
+</div>
+<script>
+          L.marker([18.851381, 41.776697]).addTo(map).bindPopup("تطوير مبنى مستدام");
+        </script>
+<div class="card opportunity-card m-2" data-category="مباني الاستدامه">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">إعادة تأهيل مبنى تراثي</h5>
+<p class="card-text">المساحة: ١٢٠٠م²</p>
+<p class="card-text">المميزات: موقع مميز - قريب من الخدمات</p>
+</div>
+</div>
+<script>
+          L.marker([18.723539, 42.60957]).addTo(map).bindPopup("إعادة تأهيل مبنى تراثي");
+        </script>
+<div class="card opportunity-card m-2" data-category="فرص موسمية">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">مهرجان صيفي</h5>
+<p class="card-text">المساحة: ١٢٠٠م²</p>
+<p class="card-text">المميزات: موقع مميز - قريب من الخدمات</p>
+</div>
+</div>
+<script>
+          L.marker([18.061583, 42.830203]).addTo(map).bindPopup("مهرجان صيفي");
+        </script>
+<div class="card opportunity-card m-2" data-category="فرص موسمية">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">فعالية رمضان</h5>
+<p class="card-text">المساحة: ١٢٠٠م²</p>
+<p class="card-text">المميزات: موقع مميز - قريب من الخدمات</p>
+</div>
+</div>
+<script>
+          L.marker([18.488654, 42.947361]).addTo(map).bindPopup("فعالية رمضان");
+        </script>
+<div class="card opportunity-card m-2" data-category="مباني الاستدامه">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">ترميم مبنى تراثي</h5>
+<p class="card-text">المساحة: ١٠٠٠م²</p>
+<p class="card-text">المميزات: موقع حيوي - مناسب للاستدامة</p>
+</div>
+</div>
+<script>
+          L.marker([18.635903, 42.394954]).addTo(map).bindPopup("ترميم مبنى تراثي");
+        </script>
+<div class="card opportunity-card m-2" data-category="مباني الاستدامه">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">مركز بيئي مستدام</h5>
+<p class="card-text">المساحة: ١٠٠٠م²</p>
+<p class="card-text">المميزات: موقع حيوي - مناسب للاستدامة</p>
+</div>
+</div>
+<script>
+          L.marker([18.643916, 41.753524]).addTo(map).bindPopup("مركز بيئي مستدام");
+        </script>
+<div class="card opportunity-card m-2" data-category="فرص موسمية">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">مهرجان الورد</h5>
+<p class="card-text">المساحة: ١٠٠٠م²</p>
+<p class="card-text">المميزات: موقع حيوي - مناسب للاستدامة</p>
+</div>
+</div>
+<script>
+          L.marker([18.736222, 42.63287]).addTo(map).bindPopup("مهرجان الورد");
+        </script>
+<div class="card opportunity-card m-2" data-category="فرص موسمية">
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">بازار رمضاني</h5>
+<p class="card-text">المساحة: ١٠٠٠م²</p>
+<p class="card-text">المميزات: موقع حيوي - مناسب للاستدامة</p>
+</div>
+</div>
+<script>
+          L.marker([18.971998, 42.350685]).addTo(map).bindPopup("بازار رمضاني");
+        </script>
+<!-- خريطة تفاعلية -->
+<div class="rounded shadow-sm border" id="map" style="height: 400px; margin-bottom: 30px;"></div>
+<!-- بطاقات الفرص -->
+<div class="row" id="opportunity-list">
+    {% for opp in opportunities %}
+      <div class="col-md-4 mb-4 opportunity-card" data-category="{{ opp.category }}">
+<div class="card h-100 shadow-sm">
+<img alt="شعار الفرصة" class="card-img-top p-4" src="{{ url_for('static', filename='img/logo.png') }}"/>
+<div class="card-body">
+<img alt="شعار استثمر عسير" class="mb-2" src="{{ url_for('static', filename='img/logo.png') }}" style="max-width: 100px;"/>
+<h5 class="card-title">{{ opp.name }}</h5>
+<p class="card-text">المساحة: {{ opp.area }} م²</p>
+<p class="card-text">القرب من الشارع: {{ opp.street_distance }} متر</p>
+<span class="badge bg-info text-dark">{{ opp.category }}</span>
+</div>
+</div>
+</div>
+    {% endfor %}
+  </div>
+</div>
+<!-- خريطة Leaflet -->
+<link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([18.22, 42.5], 8);  // مركز عسير بشكل تقريبي
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  {% for opp in opportunities %}
+    L.marker([{{ opp.lat }}, {{ opp.lon }}]).addTo(map)
+      .bindPopup('<strong>{{ opp.name }}</strong><br>{{ opp.category }}');
+  {% endfor %}
+
+  // تصفية البطاقات حسب التصنيف
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.dataset.category;
+      document.querySelectorAll('.opportunity-card').forEach(card => {
+        card.style.display = card.dataset.category === cat ? 'block' : 'none';
+      });
+    });
+  });
+
+L.marker([18.945512, 41.527798]).addTo(map).bindPopup("أرض تجارية في أبها");
+L.marker([17.251693, 42.492857]).addTo(map).bindPopup("مبنى إداري جاهز");
+</script>
+{% endblock %}
